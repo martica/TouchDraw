@@ -20,6 +20,8 @@
 		45A023E2153B8D61007BC170 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A023C3153B8D61007BC170 /* Foundation.framework */; };
 		45A023EA153B8D62007BC170 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45A023E8153B8D62007BC170 /* InfoPlist.strings */; };
 		45A023ED153B8D62007BC170 /* TouchDrawTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A023EC153B8D62007BC170 /* TouchDrawTests.m */; };
+		45A023F8153B8E40007BC170 /* OMMTouchableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A023F7153B8E40007BC170 /* OMMTouchableView.m */; };
+		45A023FB153B8EB8007BC170 /* OMMColouredPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A023FA153B8EB8007BC170 /* OMMColouredPath.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,21 +39,25 @@
 		45A023C1153B8D61007BC170 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		45A023C3153B8D61007BC170 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45A023C5153B8D61007BC170 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		45A023C9153B8D61007BC170 /* TouchDraw-Info.plist */ = {isa = PBXFileReference; path = "TouchDraw-Info.plist"; sourceTree = "<group>"; };
+		45A023C9153B8D61007BC170 /* TouchDraw-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TouchDraw-Info.plist"; sourceTree = "<group>"; };
 		45A023CB153B8D61007BC170 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		45A023CD153B8D61007BC170 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		45A023CF153B8D61007BC170 /* TouchDraw-Prefix.pch */ = {isa = PBXFileReference; path = "TouchDraw-Prefix.pch"; sourceTree = "<group>"; };
-		45A023D0153B8D61007BC170 /* OMMAppDelegate.h */ = {isa = PBXFileReference; path = OMMAppDelegate.h; sourceTree = "<group>"; };
+		45A023CF153B8D61007BC170 /* TouchDraw-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TouchDraw-Prefix.pch"; sourceTree = "<group>"; };
+		45A023D0153B8D61007BC170 /* OMMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OMMAppDelegate.h; sourceTree = "<group>"; };
 		45A023D1153B8D61007BC170 /* OMMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OMMAppDelegate.m; sourceTree = "<group>"; };
-		45A023D3153B8D61007BC170 /* OMMViewController.h */ = {isa = PBXFileReference; path = OMMViewController.h; sourceTree = "<group>"; };
+		45A023D3153B8D61007BC170 /* OMMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OMMViewController.h; sourceTree = "<group>"; };
 		45A023D4153B8D61007BC170 /* OMMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OMMViewController.m; sourceTree = "<group>"; };
 		45A023D7153B8D61007BC170 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OMMViewController.xib; sourceTree = "<group>"; };
 		45A023DE153B8D61007BC170 /* TouchDrawTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchDrawTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A023DF153B8D61007BC170 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		45A023E7153B8D62007BC170 /* TouchDrawTests-Info.plist */ = {isa = PBXFileReference; path = "TouchDrawTests-Info.plist"; sourceTree = "<group>"; };
+		45A023E7153B8D62007BC170 /* TouchDrawTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TouchDrawTests-Info.plist"; sourceTree = "<group>"; };
 		45A023E9153B8D62007BC170 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		45A023EB153B8D62007BC170 /* TouchDrawTests.h */ = {isa = PBXFileReference; path = TouchDrawTests.h; sourceTree = "<group>"; };
+		45A023EB153B8D62007BC170 /* TouchDrawTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchDrawTests.h; sourceTree = "<group>"; };
 		45A023EC153B8D62007BC170 /* TouchDrawTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchDrawTests.m; sourceTree = "<group>"; };
+		45A023F6153B8E40007BC170 /* OMMTouchableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMMTouchableView.h; sourceTree = "<group>"; };
+		45A023F7153B8E40007BC170 /* OMMTouchableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMMTouchableView.m; sourceTree = "<group>"; };
+		45A023F9153B8EB8007BC170 /* OMMColouredPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OMMColouredPath.h; sourceTree = "<group>"; };
+		45A023FA153B8EB8007BC170 /* OMMColouredPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OMMColouredPath.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,10 @@
 				45A023D4153B8D61007BC170 /* OMMViewController.m */,
 				45A023D6153B8D61007BC170 /* OMMViewController.xib */,
 				45A023C8153B8D61007BC170 /* Supporting Files */,
+				45A023F6153B8E40007BC170 /* OMMTouchableView.h */,
+				45A023F7153B8E40007BC170 /* OMMTouchableView.m */,
+				45A023F9153B8EB8007BC170 /* OMMColouredPath.h */,
+				45A023FA153B8EB8007BC170 /* OMMColouredPath.m */,
 			);
 			path = TouchDraw;
 			sourceTree = "<group>";
@@ -262,6 +272,8 @@
 				45A023CE153B8D61007BC170 /* main.m in Sources */,
 				45A023D2153B8D61007BC170 /* OMMAppDelegate.m in Sources */,
 				45A023D5153B8D61007BC170 /* OMMViewController.m in Sources */,
+				45A023F8153B8E40007BC170 /* OMMTouchableView.m in Sources */,
+				45A023FB153B8EB8007BC170 /* OMMColouredPath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
