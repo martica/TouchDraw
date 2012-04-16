@@ -45,6 +45,18 @@
     }
 }
 
+#pragma mark - Actions
+
+- (void)eraseButtonClicked {
+    [self.colouredPaths removeAllObjects];
+    [self setNeedsDisplay];
+}
+
+- (void)undoStroke:(id)sender {
+    [self.colouredPaths removeLastObject];
+    [self setNeedsDisplay];
+}
+
 - (void)changeColour:(id)sender {
     UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
     NSInteger selectedSegment = [segmentedControl selectedSegmentIndex];
@@ -66,6 +78,10 @@
     [self.colouredPaths addObject:self.currentColouredPath];
 
     
+    if ([touch tapCount] == 2) {
+        [self eraseButtonClicked];
+        return;
+    }
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
