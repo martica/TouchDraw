@@ -13,6 +13,7 @@
 @synthesize currentColouredPath = _currentColouredPath;
 @synthesize currentColour = _currentColour;
 @synthesize colouredPaths = _colouredPaths;
+@synthesize redoStack = _redoStack;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -36,6 +37,7 @@
 - (void)initializeView {
     _currentColour = [UIColor redColor];
     _colouredPaths = [NSMutableArray array];
+    _redoStack = [NSMutableArray array];
     [self setUserInteractionEnabled:YES];
 }
 
@@ -53,7 +55,21 @@
 }
 
 - (void)undoStroke:(id)sender {
+    OMMColouredPath *undonePath = [self.colouredPaths lastObject];
     [self.colouredPaths removeLastObject];
+    [self.redoStack addObject:undonePath];
+    [self setNeedsDisplay];
+}
+
+- (void)redoStroke:(id)sender {
+    if ([self.redoStack count] == 0) {
+        // nothing to redo
+        return;
+    }
+    
+    OMMColouredPath *redonePath = [self.redoStack lastObject];
+    [self.redoStack removeLastObject];
+    [self.colouredPaths addObject:redonePath];
     [self setNeedsDisplay];
 }
 
@@ -76,6 +92,8 @@
     UITouch *touch= [touches anyObject];
     [self.currentColouredPath.path moveToPoint:[touch locationInView:self]];
     [self.colouredPaths addObject:self.currentColouredPath];
+    // Remove all paths from redo stack
+    [self.redoStack removeAllObjects];
 
     
     if ([touch tapCount] == 2) {
