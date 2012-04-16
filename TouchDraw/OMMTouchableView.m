@@ -55,6 +55,11 @@
 }
 
 - (void)undoStroke:(id)sender {
+    if ([self.colouredPaths count] == 0) {
+        //nothing to undo
+        return;
+    }
+    
     OMMColouredPath *undonePath = [self.colouredPaths lastObject];
     [self.colouredPaths removeLastObject];
     [self.redoStack addObject:undonePath];
