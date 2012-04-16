@@ -13,4 +13,6 @@
 @property (strong,nonatomic) UIColor *colour;
 @property (strong,nonatomic) UIBezierPath *path;
 
+- (void)draw;
+
 @end

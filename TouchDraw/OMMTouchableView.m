@@ -10,7 +10,7 @@
 
 @implementation OMMTouchableView
 
-@synthesize currentPath = _currentPath;
+@synthesize currentColouredPath = _currentColouredPath;
 @synthesize currentColour = _currentColour;
 @synthesize colouredPaths = _colouredPaths;
 
@@ -41,8 +41,7 @@
 
 - (void)drawRect:(CGRect)rect {
     for (OMMColouredPath *colouredPath in self.colouredPaths) {
-        [colouredPath.colour setStroke];
-        [colouredPath.path stroke];
+        [colouredPath draw];
     }
 }
 
@@ -59,66 +58,26 @@
 #pragma mark - Touch Methods
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {   
-    self.currentPath=[[UIBezierPath alloc]init];
-    self.currentPath.lineWidth=10;
-    UITouch *touch= [touches anyObject];
-    [self.currentPath moveToPoint:[touch locationInView:self]];
-    
-    OMMColouredPath *newColouredPath = [[OMMColouredPath alloc] init];
-    [newColouredPath setColour:self.currentColour];
-    [newColouredPath setPath:self.currentPath];
-    [self.colouredPaths addObject:newColouredPath];
+    self.currentColouredPath = [[OMMColouredPath alloc] init];
+    [self.currentColouredPath setColour:self.currentColour];
 
-    
-//    if ([touch tapCount] == 2) {
-//        [self eraseButtonClicked];
-//        return;
-//    }
-//    
-//    lastPoint = [touch locationInView:self];
-//    lastPoint.y -= 20;
-    
+    UITouch *touch= [touches anyObject];
+    [self.currentColouredPath.path moveToPoint:[touch locationInView:self]];
+    [self.colouredPaths addObject:self.currentColouredPath];
+
     
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    //swiped = YES;
-    
     UITouch *touch = [touches anyObject];   
-//    CGPoint currentPoint = [touch locationInView:self];
-//    currentPoint.y -= 20;
-    
-    [self.currentPath addLineToPoint:[touch locationInView:self]];
+    [self.currentColouredPath.path addLineToPoint:[touch locationInView:self]];
     [self setNeedsDisplay];
-    
-//    UIGraphicsBeginImageContext(self.frame.size);
-//    CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-//    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 15.0);
-//    CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), red, green, blue, 1.0);
-//    CGContextBeginPath(UIGraphicsGetCurrentContext());
-//    CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
-//    CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
-//    CGContextStrokePath(UIGraphicsGetCurrentContext());
-//    UIGraphicsEndImageContext();
-    
-//    lastPoint = currentPoint;
-    
-//    moved++;    
-//    if (moved == 10) {
-//        moved = 0;
-//    }
-    
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-//    UITouch *touch = [touches anyObject];   
-//    if ([touch tapCount] == 2) {
-//        [self eraseButtonClicked];
-//        return;
-//    }
-    self.currentPath = nil;
+    self.currentColouredPath = nil;
 }
 
 @end

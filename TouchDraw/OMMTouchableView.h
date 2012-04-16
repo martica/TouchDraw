@@ -13,8 +13,10 @@
 
 @property (strong,nonatomic) UIColor *currentColour;
 @property (strong,nonatomic) NSMutableArray *colouredPaths;
-@property (strong,nonatomic) UIBezierPath *currentPath;
+@property (strong,nonatomic) OMMColouredPath *currentColouredPath;
 
 - (IBAction)changeColour:(id)sender;
+- (IBAction)undoStroke:(id)sender;
+- (IBAction)eraseButtonClicked;
 
 @end
